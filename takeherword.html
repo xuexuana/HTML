@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title> P-Words <3 <3 </title>
+	</head>
+
+
+	<body>
+		<h2> Welcome to TarachaMcCain.com  </h2>
+		<br>
+		<br>
+		<h3>Coders Only - Are you are Coder? :</h3>
+			<br>	<script type = "text/javascript">
+
+		// Note: There is nothing to hide. I just want to see if your resouceful!
+		//
+
+		var count = 2;
+		function validate() {
+		var un = document.myform.username.value;
+		var pw = document.myform.pword.value;
+		var valid = false;
+
+		var unArray = ["codequeen","CodeQueen","Codequeen","codeQueen","CODEQUEEN"];  // as many as you like - no comma after final entry
+		var pwArray = ["YesICheated","YesICheated","YesICheated","YesICheated","YesICheated"];  // the password;
+
+		for (var i=0; i <unArray.length; i++) {
+		if ((un == unArray[i]) && (pw == pwArray[i])) {
+		valid = true;
+		break;
+		}
+		}
+
+		if (valid) {
+		alert ("Hail to the Queen!!");
+		window.location = "www.tarachamccain.com";
+		return false;
+		}
+
+		var t = " tries";
+		if (count == 1) {t = " try"}
+
+		if (count >= 1) {
+		alert ("Invalid username and/or password.  You have " + count + t + " left.  HEY...It's really not that hard");
+		document.myform.username.value = "";
+		document.myform.pword.value = "";
+		setTimeout("document.myform.username.focus()", 3);
+		setTimeout("document.myform.username.select()", 3);
+		count --;
+		}
+
+		else {
+		alert ("Still incorrect! Sorry you are the biggest loser! Go take a seat");
+		document.myform.username.value = "No more tries allowed!";
+		document.myform.pword.value = "";
+		document.myform.username.disabled = true;
+		document.myform.pword.disabled = true;
+		return false;
+		}
+
+		}
+
+		</script>
+
+		<form name = "myform">
+		<p>Who Are You Again? <input type="text" name="username"> Password: <input type="password" name="pword">
+		<input type="button" value="Check In" name="Submit" onclick= "validate()">
+		</p>
+
+		</form>
+	</body>
+
+
+</html>
